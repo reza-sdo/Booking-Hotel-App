@@ -9,13 +9,11 @@ import { format } from "date-fns";
 function Header() {
   const [destination, setDestination] = useState("");
   const [openOptions, setOpenOptions] = useState(false);
-  const [options, setOptions] = useState([
-    {
-      adult: 1,
-      children: 0,
-      room: 1,
-    },
-  ]);
+  const [options, setOptions] = useState({
+    adult: 1,
+    children: 0,
+    room: 1,
+  });
   const [openDate, setOpenDate] = useState(false);
   const [date, setDate] = useState([
     {
@@ -136,6 +134,7 @@ function GuestOptionsList({ options, handelOptions, setOpenOptions }) {
 }
 
 function OptionItem({ options, type, minLimit, handelOptions }) {
+  console.log(options);
   return (
     <div className="guestOptionItem">
       <span className="optionText">{type}</span>
